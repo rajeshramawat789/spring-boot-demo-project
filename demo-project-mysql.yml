@@ -16,7 +16,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pvc
+  name: mysql-demo-pvc
 spec:
   storageClassName: manual
   accessModes:
@@ -60,4 +60,4 @@ spec:
       volumes:
         - name: storage
           persistentVolumeClaim:
-            claimName: mysql-pvc
+            claimName: mysql-demo-pvc

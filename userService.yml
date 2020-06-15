@@ -6,6 +6,8 @@ data:
   database-name: "restapi"
   database-service: "mysql-demo-project"
   database-port: "3306"
+  database-password: "password"
+  database-user: "root"
 --- 
 apiVersion: v1
 kind: Secret
@@ -67,12 +69,12 @@ spec:
                         key: database-name
             - name: USERNAME
               valueFrom:
-                    secretKeyRef:
+                configMapKeyRef:
                         name: mysqldb
                         key: database-user
             - name: PASSWORD
               valueFrom:
-                    secretKeyRef:
+                configMapKeyRef:
                         name: mysqldb
                         key: database-password
           imagePullPolicy: Always

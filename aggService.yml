@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: aggService
+  name: aggservice
 spec:
   selector:
-    app: aggService
+    app: aggservice
   ports:
     - port: 80
       targetPort: 8080
@@ -13,16 +13,16 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-          name: aggService
+          name: aggservice
 spec:
           replicas: 1
           selector:
             matchLabels:
-              app: aggService
+              app: aggservice
           template:
             metadata:
               labels:
-                app: aggService
+                app: aggservice
             spec:
               containers:
                 - name: service1

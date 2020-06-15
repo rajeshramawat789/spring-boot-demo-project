@@ -19,12 +19,12 @@ data:
 apiVersion: v1
 kind: Service
 metadata:
-    name: userService
+    name: userservice
     labels:
-    app: userService
+    app: userservice
 spec:
     selector:
-        app: userService
+        app: userservice
     ports:
         - port: 80
         name: http
@@ -33,16 +33,16 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: userService
+  name: userservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: userService
+      app: userservice
   template:
     metadata:
       labels:
-        app: userService
+        app: userservice
     spec:
       containers:
         - name: app

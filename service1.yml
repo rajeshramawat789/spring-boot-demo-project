@@ -13,7 +13,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-          name: service2
+          name: service1
 spec:
           replicas: 1
           selector:

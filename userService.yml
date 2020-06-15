@@ -45,7 +45,7 @@ spec:
         app: userservice
     spec:
       containers:
-        - name: app
+        - name: userservice
           image: rajeshramawat/userservice
           ports:
             - containerPort: 8080

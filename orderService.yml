@@ -41,12 +41,12 @@ spec:
                 - containerPort: 8080
               env:
                 - name: JAEGER_HOST
-                    valueFrom: 
+                  valueFrom: 
                         configMapKeyRef:
                             name: jaegerenv
                             key: jaeger-host
                 - name: JAEGER_PORT
-                    valueFrom: 
+                  valueFrom: 
                         configMapKeyRef:
                             name: jaegerenv
                             key: jaeger-port

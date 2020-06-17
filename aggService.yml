@@ -29,4 +29,15 @@ spec:
                   image: rajeshramawat/aggservice
                   ports:
                     - containerPort: 8080
+                  env:
+                    - name: JAEGER_UDP_HOST_WITH_PORT
+                      valueFrom: 
+                            configMapKeyRef:
+                                name: jaegerenv
+                                key: jaeger-host-with-port
+                    - name: JAEGER_HTTP_URL
+                      valueFrom: 
+                            configMapKeyRef:
+                                name: jaegerenv
+                                key: jaeger-http-url
                   imagePullPolicy: Always

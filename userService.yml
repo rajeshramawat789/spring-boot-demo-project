@@ -77,4 +77,14 @@ spec:
                 configMapKeyRef:
                         name: mysqldb
                         key: database-password
+            - name: JAEGER_UDP_HOST_WITH_PORT
+              valueFrom: 
+                    configMapKeyRef:
+                        name: jaegerenv
+                        key: jaeger-host-with-port
+            - name: JAEGER_HTTP_URL
+              valueFrom: 
+                    configMapKeyRef:
+                        name: jaegerenv
+                        key: jaeger-http-url
           imagePullPolicy: Always

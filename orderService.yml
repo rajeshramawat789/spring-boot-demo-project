@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: jaegerenv
 data:
-  jaeger-host: "10.0.10.64"
-  jaeger-port: "80"
+  jaeger-host-with-port: "35.184.114.135:80"
+  jaeger-http-url: "10.0.10.53:6831"
 ---
 apiVersion: v1
 kind: Service
@@ -40,14 +40,14 @@ spec:
               ports:
                 - containerPort: 8080
               env:
-                - name: JAEGER_HOST
+                - name: JAEGER_UDP_HOST_WITH_PORT
                   valueFrom: 
                         configMapKeyRef:
                             name: jaegerenv
-                            key: jaeger-host
-                - name: JAEGER_PORT
+                            key: jaeger-host-with-port
+                - name: JAEGER_HTTP_URL
                   valueFrom: 
                         configMapKeyRef:
                             name: jaegerenv
-                            key: jaeger-port
+                            key: jaeger-http-url
               imagePullPolicy: Always
